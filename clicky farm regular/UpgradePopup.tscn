@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://UpgradePopup.gd" type="Script" id=1]
+[ext_resource path="res://UpgradeMenu.gd" type="Script" id=2]
+
+[node name="UpgradePopup" type="Node"]
+script = ExtResource( 1 )
+
+[node name="UpgradeMenu" type="Popup" parent="."]
+visible = true
+margin_left = 71.7032
+margin_top = 28.0989
+margin_right = 537.703
+margin_bottom = 762.099
+script = ExtResource( 2 )
+
+[node name="CloseButton" type="Button" parent="UpgradeMenu"]
+margin_left = 462.703
+margin_top = -23.3179
+margin_right = 521.703
+margin_bottom = 11.6821
+text = "close"
+
+[node name="UpgradeEgg" type="Button" parent="UpgradeMenu"]
+margin_left = 46.0
+margin_top = 55.0
+margin_right = 266.0
+margin_bottom = 109.0
+text = "Upgrade Your Eggs!"
+align = 0
+
+[node name="UpgradeChickens" type="Button" parent="UpgradeMenu"]
+margin_left = 46.4274
+margin_top = 119.766
+margin_right = 269.427
+margin_bottom = 171.766
+text = "Upgrade Your Chickens"
+align = 0
+
+[node name="OpenButton" type="Button" parent="."]
+margin_right = 71.0
+margin_bottom = 41.0
+[connection signal="pressed" from="UpgradeMenu/CloseButton" to="." method="_on_CloseButton_pressed"]
+[connection signal="pressed" from="UpgradeMenu/UpgradeEgg" to="." method="_on_UpgradeEgg_pressed"]
+[connection signal="pressed" from="UpgradeMenu/UpgradeChickens" to="." method="_on_UpgradeChickens_pressed"]
+[connection signal="pressed" from="OpenButton" to="UpgradeMenu" method="_on_OpenButton_pressed"]
+[connection signal="pressed" from="OpenButton" to="." method="_on_OpenButton_pressed"]
